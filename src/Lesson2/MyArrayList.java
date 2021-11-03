@@ -1,6 +1,7 @@
 package Lesson2;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Timer;
 
 public class MyArrayList<T extends Comparable<T>> {
@@ -144,7 +145,7 @@ public class MyArrayList<T extends Comparable<T>> {
     }
 
     public void bubbleSortOpt() {
-        
+
         boolean isSwap;
         for (int i = size - 1; i > 0; i--) {
             isSwap = false;
@@ -159,5 +160,15 @@ public class MyArrayList<T extends Comparable<T>> {
                 break;
             }
         }
+    }
+
+    public MyArrayList<Integer> createTestArrayList() {
+        Random random = new Random();
+        int n = 100000;
+        MyArrayList<Integer> mal = new MyArrayList<>(n);
+        for (int i = 0; i < n; i++) {
+            mal.add(random.nextInt(100));
+        }
+        return mal;
     }
 }
