@@ -71,19 +71,42 @@ public class Main {
 //
 //        System.out.println(msal.bynaryFind(7));
 
-        Random random = new Random();
-        int n = 20;
-        MyArrayList<Integer> mal = new MyArrayList<>(n);
-        for (int i = 0; i < n; i++) {
-            mal.add(random.nextInt(100));
-        }
-        System.out.println(mal);
 
-//        mal.selectionSort();
-//        mal.insertionSort();
-//        mal.bubbleSort();
-        mal.bubbleSortOpt();
-        System.out.println(mal);
+
+        //System.out.println(mal);
+
+        MyArrayList list = new MyArrayList().createTestArrayList();
+        double startTime = System.nanoTime();
+        list.selectionSort();
+        double elapsedTime = System.nanoTime() - startTime;
+        //System.out.println(mal);
+        System.out.printf("Selection sort elapsed time: " + "%.3f" + " s.\n" , elapsedTime/1000000000);
+
+
+        MyArrayList list2 = new MyArrayList().createTestArrayList();
+        double startTime2 = System.nanoTime();
+        list2.insertionSort();
+        double elapsedTime2 = System.nanoTime() - startTime2;
+        //System.out.println(mal);
+        System.out.printf("Insertion sort elapsed time: " + "%.3f" + " s.\n", elapsedTime2/1000000000);
+
+        MyArrayList list3 = new MyArrayList().createTestArrayList();
+        double startTime3 = System.nanoTime();
+        list3.bubbleSort();
+        double elapsedTime3 = System.nanoTime() - startTime3;
+        //System.out.println(mal);
+        System.out.printf("Bubble sort elapsed time: " + "%.3f" + " s.\n", elapsedTime3/1000000000);
+
+        MyArrayList list4 = new MyArrayList().createTestArrayList();
+        double startTime4 = System.nanoTime();
+        list4.insertionSort();
+        double elapsedTime4 = System.nanoTime() - startTime4;
+        //System.out.println(mal);
+        System.out.printf("Bubble optimization sort elapsed time: " + "%.3f" + " s.\n", elapsedTime4/1000000000);
+
 
     }
+
+
+
 }
