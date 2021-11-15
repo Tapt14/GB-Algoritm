@@ -3,9 +3,9 @@ package Lesson7;
 import java.util.LinkedList;
 
 public class Graph {
-    private int vertexCount;
+    private final int vertexCount;
     private int edgeCount;
-    private LinkedList<Integer>[] adjList;
+    private final LinkedList<Integer>[] adjList;
 
     public Graph(int vertexCount) {
         if (vertexCount <= 0) {
